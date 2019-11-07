@@ -15,10 +15,11 @@ class CreateStudentCrudTable extends Migration
     {
         Schema::create('student_crud', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('address');
-            $table->string('email');
+            $table->string('firstname')->nullable();
+            $table->string('lastname')->nullable();
+            $table->string('email')->nullable();
+            $table->string('address')->nullable();
+            $table->date('post_date')->nullable();
             $table->timestamps();
         });
     }
